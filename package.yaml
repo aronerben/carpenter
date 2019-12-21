@@ -17,10 +17,18 @@ extra-source-files:
 # To avoid duplicated efforts in documentation and dealing with the
 # complications of embedding Haddock markup inside cabal files, it is
 # common to point users to the README.md file.
-description:         Please see the README on GitHub at <https://github.com/githubuser/tbel#readme>
+description:         Please see the README on GitHub at <https://github.com/aronerben/tbel/blob/master/README.md>
 
 dependencies:
 - base >= 4.7 && < 5
+- megaparsec
+- parser-combinators
+- text
+- HUnit
+- tasty
+- tasty-hunit
+- mtl
+- containers
 
 library:
   source-dirs: src

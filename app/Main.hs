@@ -1,6 +1,11 @@
-module Main where
+module Main
+  ( main
+  ) where
 
-import Lib
+import Data.Text (Text)
+import Data.Text.IO as T (readFile)
+
+import Tbel.Parser
 
 main :: IO ()
-main = someFunc
+main = putStrLn "hey"

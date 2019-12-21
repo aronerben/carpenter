@@ -4,11 +4,11 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: cff8193ab90f821693882d1294f1a42cbb63bbaf59becbbf8bf10b7cfea31418
+-- hash: 8c33aa5b5472a7026d3091c65ccf77b408657f036aff564b59d794e402c42a51
 
 name:           tbel
 version:        0.1.0.0
-description:    Please see the README on GitHub at <https://github.com/githubuser/tbel#readme>
+description:    Please see the README on GitHub at <https://github.com/aronerben/tbel/blob/master/README.md>
 homepage:       https://github.com/githubuser/tbel#readme
 bug-reports:    https://github.com/githubuser/tbel/issues
 author:         Author name here
@@ -27,13 +27,25 @@ source-repository head
 
 library
   exposed-modules:
-      Lib
+      Tbel.Base
+      Tbel.Evaluator
+      Tbel.Lexer
+      Tbel.Parser
+      Tbel.Syntax
   other-modules:
       Paths_tbel
   hs-source-dirs:
       src
   build-depends:
-      base >=4.7 && <5
+      HUnit
+    , base >=4.7 && <5
+    , containers
+    , megaparsec
+    , mtl
+    , parser-combinators
+    , tasty
+    , tasty-hunit
+    , text
   default-language: Haskell2010
 
 executable tbel-exe
@@ -44,8 +56,16 @@ executable tbel-exe
       app
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
+      HUnit
+    , base >=4.7 && <5
+    , containers
+    , megaparsec
+    , mtl
+    , parser-combinators
+    , tasty
+    , tasty-hunit
     , tbel
+    , text
   default-language: Haskell2010
 
 test-suite tbel-test
@@ -57,6 +77,14 @@ test-suite tbel-test
       test
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
+      HUnit
+    , base >=4.7 && <5
+    , containers
+    , megaparsec
+    , mtl
+    , parser-combinators
+    , tasty
+    , tasty-hunit
     , tbel
+    , text
   default-language: Haskell2010
