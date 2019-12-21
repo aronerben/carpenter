@@ -18,8 +18,8 @@ execParser p text =
     Right parsed -> Right parsed
     Left failed -> Left $ errorBundlePretty failed
 
-makeParserTest :: Parser a -> Text -> Either () a
-makeParserTest p text =
+execParserTest :: Parser a -> Text -> Either () a
+execParserTest p text =
   case parse (p <* eof) "" text of
     Right parsed -> Right parsed
     Left failed -> Left ()
