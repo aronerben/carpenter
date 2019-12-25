@@ -12,14 +12,15 @@ import Tbel.Syntax
 
 -- Parsers 
 -- Grammar-specific elaborate parsers
-execParser :: Parser Program -> Text -> Either String Program
-execParser p text =
+execParser ::
+     (ParseErrorBundle Text Void -> b) -> Parser a -> Text -> Either b a
+execParser errFn p text =
   case parse (p <* eof) "" text of
     Right parsed -> Right parsed
-    Left failed -> Left $ errorBundlePretty failed
+    Left failed -> Left $ errFn failed
+
+execParserWithError :: Parser Program -> Text -> Either String Program
+execParserWithError = execParser errorBundlePretty
 
 execParserTest :: Parser a -> Text -> Either () a
-execParserTest p text =
-  case parse (p <* eof) "" text of
-    Right parsed -> Right parsed
-    Left failed -> Left ()
+execParserTest = execParser $ const ()
