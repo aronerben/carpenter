@@ -1,0 +1,669 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+   
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      
+      
+      <meta name="generator" content="Railroad Diagram Generator 1.60">
+      
+      <style type="text/css">
+    ::-moz-selection
+    {
+      color: #FFFCF0;
+      background: #0F0C00;
+    }
+    ::selection
+    {
+      color: #FFFCF0;
+      background: #0F0C00;
+    }      
+    .ebnf a, .grammar a
+    {
+      text-decoration: none;
+    }
+    .ebnf a:hover, .grammar a:hover
+    {
+      color: #050400;
+      text-decoration: underline;
+    }    
+    .signature
+    {
+      color: #806600;
+      font-size: 11px;
+      text-align: right;
+    }
+    body
+    {
+      font: normal 12px Verdana, sans-serif;
+      color: #0F0C00;
+      background: #FFFCF0;
+    }
+    a:link, a:visited
+    {
+      color: #0F0C00;
+    }
+    a:link.signature, a:visited.signature
+    {
+      color: #806600;
+    }
+    a.button, #tabs li a
+    {
+      padding: 0.25em 0.5em;
+      border: 1px solid #806600;
+      background: #F1E8C6;
+      color: #806600;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a.button:hover, #tabs li a:hover
+    {
+      color: #050400;
+      background: #FFF6D1;
+      border-color: #050400;       
+    }     
+    #tabs
+    {
+      padding: 3px 10px;
+      margin-left: 0;
+      margin-top: 58px;
+      border-bottom: 1px solid #0F0C00;
+    }  
+    #tabs li
+    {
+      list-style: none;
+      margin-left: 5px;
+      display: inline;
+    }
+    #tabs li a
+    {     
+      border-bottom: 1px solid #0F0C00;
+    }
+    #tabs li a.active
+    {
+      color: #0F0C00;
+      background: #FFFCF0;
+      border-color: #0F0C00;
+      border-bottom: 1px solid #FFFCF0;
+      outline: none;
+    }
+    #divs div
+    {
+      display: none;
+      overflow:auto;
+    }
+    #divs div.active
+    {
+      display: block;
+    }
+    #text
+    {
+      border-color: #806600;
+      background: #FFFEFA;
+      color: #050400;
+    }
+    .small
+    {
+      vertical-align: top;
+      text-align: right;
+      font-size: 9px;
+      font-weight: normal;
+      line-height: 120%;
+    }
+    td.small
+    {
+      padding-top: 0px;
+    }
+    .hidden
+    {
+      visibility: hidden;
+    }
+    td:hover .hidden 
+    {
+      visibility: visible;
+    }
+    div.download
+    {
+      display: none;
+      background: #FFFCF0;
+      position: absolute;
+      right: 34px;
+      top: 94px;
+      padding: 10px;
+      border: 1px dotted #0F0C00;
+    }
+    #divs div.ebnf, .ebnf code
+    {
+      display: block;
+      padding: 10px;
+      background: #FFF6D1;
+      width: 992px;
+    }
+    #divs div.grammar
+    {
+      display: block;
+      padding-left: 16px;
+      padding-top: 2px;
+      padding-bottom: 2px;
+      background: #FFF6D1;
+    }
+    pre
+    {
+      margin: 0px;
+    }
+    .ebnf div
+    {
+      padding-left: 13ch;
+      text-indent: -13ch;
+    }
+    .ebnf code, .grammar code, textarea, pre
+    {
+      font:12px SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+    }
+    tr.option-line td:first-child
+    {
+      text-align: right
+    }
+    tr.option-text td
+    {
+      padding-bottom: 10px
+    }
+    table.palette
+    {
+      border-top: 1px solid #050400;
+      border-right: 1px solid #050400;
+      margin-bottom: 4px
+    }
+    td.palette
+    {
+      border-bottom: 1px solid #050400;
+      border-left: 1px solid #050400;
+    }
+    a.palette
+    {
+      padding: 2px 3px 2px 10px;
+      text-decoration: none;
+    }
+    .palette
+    {
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -o-user-select: none;
+      -ms-user-select: none;
+    }
+  </style>
+   </head>
+   
+   <body>
+      
+      <p style="font-size: 14px; font-weight:bold"><a name="Program">Program:</a></p><img border="0" src="diagram/Program.png" height="57" width="193" usemap="#Program.map"><map name="Program.map"><area shape="rect" coords="49,1,143,33" href="#Statements" title="Statements"></map><p>
+         
+         <div class="ebnf"><code>
+               
+               <div><a href="#Program" title="Program">Program</a>&nbsp;&nbsp;::= <a href="#Statements" title="Statements">Statements</a>*</div></code></div>
+         </p>
+      
+      <p>no references</p><br><p style="font-size: 14px; font-weight:bold"><a name="Statement">Statement:</a></p><img border="0" src="diagram/Statement.png" height="125" width="245" usemap="#Statement.map"><map name="Statement.map"><area shape="rect" coords="49,1,177,33" href="#TableAssignment" title="TableAssignment"><area shape="rect" coords="49,45,195,77" href="#VariableAssignment" title="VariableAssignment"><area shape="rect" coords="49,89,129,121" href="#Comment" title="Comment"></map><p>
+         
+         <div class="ebnf"><code>
+               
+               <div><a href="#Statement" title="Statement">Statement</a></div>
+               
+               <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;::= <a href="#TableAssignment" title="TableAssignment">TableAssignment</a></div>
+               
+               <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| <a href="#VariableAssignment" title="VariableAssignment">VariableAssignment</a></div>
+               
+               <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| <a href="#Comment" title="Comment">Comment</a></div></code></div>
+         </p>
+      
+      <p>no references</p><br><p style="font-size: 14px; font-weight:bold"><a name="TableAssignment">TableAssignment:</a></p><img border="0" src="diagram/TableAssignment.png" height="69" width="445" usemap="#TableAssignment.map"><map name="TableAssignment.map"><area shape="rect" coords="143,1,221,33" href="#Identifier" title="Identifier"><area shape="rect" coords="291,1,415,33" href="#TableExpression" title="TableExpression"></map><p>
+         
+         <div class="ebnf"><code>
+               
+               <div><a href="#TableAssignment" title="TableAssignment">TableAssignment</a></div>
+               
+               <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;::= 'table'? <a href="#Identifier" title="Identifier">Identifier</a> '=' <a href="#TableExpression" title="TableExpression">TableExpression</a></div></code></div>
+         </p>
+      
+      <p>referenced by:
+         
+         <ul>
+            
+            <li><a href="#Statement" title="Statement">Statement</a></li>
+            </ul>
+         </p><br><p style="font-size: 14px; font-weight:bold"><a name="TableExpression">TableExpression:</a></p><img border="0" src="diagram/TableExpression.png" height="37" width="113" usemap="#TableExpression.map"><map name="TableExpression.map"><area shape="rect" coords="29,1,83,33" href="#TODO" title="TODO"></map><p>
+         
+         <div class="ebnf"><code>
+               
+               <div><a href="#TableExpression" title="TableExpression">TableExpression</a></div>
+               
+               <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;::= <a href="#TODO" title="TODO">TODO</a></div></code></div>
+         </p>
+      
+      <p>referenced by:
+         
+         <ul>
+            
+            <li><a href="#TableAssignment" title="TableAssignment">TableAssignment</a></li>
+            </ul>
+         </p><br><p style="font-size: 14px; font-weight:bold"><a name="VariableAssignment">VariableAssignment:</a></p><img border="0" src="diagram/VariableAssignment.png" height="113" width="475" usemap="#VariableAssignment.map"><map name="VariableAssignment.map"><area shape="rect" coords="151,1,229,33" href="#Identifier" title="Identifier"><area shape="rect" coords="299,1,425,33" href="#StringExpression" title="StringExpression"><area shape="rect" coords="49,77,201,109" href="#ArithmeticExpression" title="ArithmeticExpression"></map><p>
+         
+         <div class="ebnf"><code>
+               
+               <div><a href="#VariableAssignment" title="VariableAssignment">VariableAssignment</a></div>
+               
+               <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;::= 'var'? <a href="#Identifier" title="Identifier">Identifier</a> '=' <a href="#StringExpression" title="StringExpression">StringExpression</a></div>
+               
+               <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| <a href="#ArithmeticExpression" title="ArithmeticExpression">ArithmeticExpression</a></div></code></div>
+         </p>
+      
+      <p>referenced by:
+         
+         <ul>
+            
+            <li><a href="#Statement" title="Statement">Statement</a></li>
+            </ul>
+         </p><br><p style="font-size: 14px; font-weight:bold"><a name="StringExpression">StringExpression:</a></p><img border="0" src="diagram/StringExpression.png" height="81" width="157" usemap="#StringExpression.map"><map name="StringExpression.map"><area shape="rect" coords="49,1,107,33" href="#String" title="String"><area shape="rect" coords="49,45,103,77" href="#TODO" title="TODO"></map><p>
+         
+         <div class="ebnf"><code>
+               
+               <div><a href="#StringExpression" title="StringExpression">StringExpression</a></div>
+               
+               <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;::= <a href="#String" title="String">String</a></div>
+               
+               <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| <a href="#TODO" title="TODO">TODO</a></div></code></div>
+         </p>
+      
+      <p>referenced by:
+         
+         <ul>
+            
+            <li><a href="#VariableAssignment" title="VariableAssignment">VariableAssignment</a></li>
+            </ul>
+         </p><br><p style="font-size: 14px; font-weight:bold"><a name="ArithmeticExpression">ArithmeticExpression:</a></p><img border="0" src="diagram/ArithmeticExpression.png" height="81" width="169" usemap="#ArithmeticExpression.map"><map name="ArithmeticExpression.map"><area shape="rect" coords="49,1,119,33" href="#Number" title="Number"><area shape="rect" coords="49,45,103,77" href="#TODO" title="TODO"></map><p>
+         
+         <div class="ebnf"><code>
+               
+               <div><a href="#ArithmeticExpression" title="ArithmeticExpression">ArithmeticExpression</a></div>
+               
+               <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;::= <a href="#Number" title="Number">Number</a></div>
+               
+               <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| <a href="#TODO" title="TODO">TODO</a></div></code></div>
+         </p>
+      
+      <p>referenced by:
+         
+         <ul>
+            
+            <li><a href="#VariableAssignment" title="VariableAssignment">VariableAssignment</a></li>
+            </ul>
+         </p><br><p style="font-size: 14px; font-weight:bold"><a name="String">String:</a></p><img border="0" src="diagram/String.png" height="53" width="277" usemap="#String.map"><map name="String.map"><area shape="rect" coords="135,17,181,49" href="#Text" title="Text"></map><p>
+         
+         <div class="ebnf"><code>
+               
+               <div><a href="#String" title="String">String</a>&nbsp;&nbsp;&nbsp;::= '"'+ <a href="#Text" title="Text">Text</a>+ '"'</div></code></div>
+         </p>
+      
+      <p>referenced by:
+         
+         <ul>
+            
+            <li><a href="#StringExpression" title="StringExpression">StringExpression</a></li>
+            </ul>
+         </p><br><p style="font-size: 14px; font-weight:bold"><a name="Number">Number:</a></p><img border="0" src="diagram/Number.png" height="69" width="349" usemap="#Number.map"><map name="Number.map"><area shape="rect" coords="49,17,97,49" href="#Digit" title="Digit"><area shape="rect" coords="231,17,279,49" href="#Digit" title="Digit"></map><p>
+         
+         <div class="ebnf"><code>
+               
+               <div><a href="#Number" title="Number">Number</a>&nbsp;&nbsp;&nbsp;::= <a href="#Digit" title="Digit">Digit</a>+ ( <a href="#." title=".">.</a> <a href="#Digit" title="Digit">Digit</a>+ )?</div></code></div>
+         </p>
+      
+      <p>referenced by:
+         
+         <ul>
+            
+            <li><a href="#ArithmeticExpression" title="ArithmeticExpression">ArithmeticExpression</a></li>
+            </ul>
+         </p><br><p style="font-size: 14px; font-weight:bold"><a name="Digit">Digit:</a></p><img border="0" src="diagram/Digit.png" height="37" width="121"><p>
+         
+         <div class="ebnf"><code>
+               
+               <div><a href="#Digit" title="Digit">Digit</a>&nbsp;&nbsp;&nbsp;&nbsp;::= [0-9]</div></code></div>
+         </p>
+      
+      <p>referenced by:
+         
+         <ul>
+            
+            <li><a href="#Number" title="Number">Number</a></li>
+            </ul>
+         </p><br><p style="font-size: 14px; font-weight:bold"><a name="Identifier">Identifier:</a></p><img border="0" src="diagram/Identifier.png" height="203" width="283"><p>
+         
+         <div class="ebnf"><code>
+               
+               <div><a href="#Identifier" title="Identifier">Identifier</a></div>
+               
+               <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;::= [a-zA-Z] [0-9a-zA-Z]*</div></code></div>
+         </p>
+      
+      <p>referenced by:
+         
+         <ul>
+            
+            <li><a href="#TableAssignment" title="TableAssignment">TableAssignment</a></li>
+            
+            <li><a href="#VariableAssignment" title="VariableAssignment">VariableAssignment</a></li>
+            </ul>
+         </p><br><p style="font-size: 14px; font-weight:bold"><a name="Comment">Comment:</a></p><img border="0" src="diagram/Comment.png" height="159" width="293" usemap="#Comment.map"><map name="Comment.map"><area shape="rect" coords="123,45,169,77" href="#Text" title="Text"><area shape="rect" coords="101,123,147,155" href="#Text" title="Text"></map><p>
+         
+         <div class="ebnf"><code>
+               
+               <div><a href="#Comment" title="Comment">Comment</a>&nbsp;&nbsp;::= '--' <a href="#Text" title="Text">Text</a></div>
+               
+               <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| '-*' ( <a href="#Text" title="Text">Text</a> | '\n' )* '-*'</div></code></div>
+         </p>
+      
+      <p>referenced by:
+         
+         <ul>
+            
+            <li><a href="#Statement" title="Statement">Statement</a></li>
+            
+            <li><a href="#Whitespace" title="Whitespace">Whitespace</a></li>
+            </ul>
+         </p><br><p style="font-size: 14px; font-weight:bold"><a name="Text">Text:</a></p><img border="0" src="diagram/Text.png" height="57" width="181" usemap="#Text.map"><map name="Text.map"><area shape="rect" coords="49,1,131,33" href="#Character" title="Character"></map><p>
+         
+         <div class="ebnf"><code>
+               
+               <div><a href="#Text" title="Text">Text</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;::= <a href="#Character" title="Character">Character</a>*</div></code></div>
+         </p>
+      
+      <p>referenced by:
+         
+         <ul>
+            
+            <li><a href="#Comment" title="Comment">Comment</a></li>
+            
+            <li><a href="#String" title="String">String</a></li>
+            </ul>
+         </p><br><p style="font-size: 14px; font-weight:bold"><a name="Character">Character:</a></p><img border="0" src="diagram/Character.png" height="37" width="333"><p>
+         
+         <div class="ebnf"><code>
+               
+               <div><a href="#Character" title="Character">Character</a></div>
+               
+               <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;::= [<a href="http://www.w3.org/TR/xml/#NT-Char" title="http://www.w3.org/TR/xml/#NT-Char" target="_blank">http://www.w3.org/TR/xml/#NT-Char</a>]</div></code></div>
+         </p>
+      
+      <p>referenced by:
+         
+         <ul>
+            
+            <li><a href="#Text" title="Text">Text</a></li>
+            </ul>
+         </p><br><p style="font-size: 14px; font-weight:bold"><a name="Grammar">Grammar:</a></p><img border="0" src="diagram/Grammar.png" height="57" width="187" usemap="#Grammar.map"><map name="Grammar.map"><area shape="rect" coords="49,1,137,33" href="#Production" title="Production"></map><p>
+         
+         <div class="ebnf"><code>
+               
+               <div><a href="#Grammar" title="Grammar">Grammar</a>&nbsp;&nbsp;::= <a href="#Production" title="Production">Production</a>*</div></code></div>
+         </p>
+      
+      <p>no references</p><br><p style="font-size: 14px; font-weight:bold"><a name="Production">Production:</a></p><img border="0" src="diagram/Production.png" height="81" width="315" usemap="#Production.map"><map name="Production.map"><area shape="rect" coords="29,1,103,33" href="#NCName" title="NCName"><area shape="rect" coords="203,1,265,33" href="#Choice" title="Choice"><area shape="rect" coords="203,45,247,77" href="#Link" title="Link"></map><p>
+         
+         <div class="ebnf"><code>
+               
+               <div><a href="#Production" title="Production">Production</a></div>
+               
+               <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;::= <a href="#NCName" title="NCName">NCName</a> '::=' ( <a href="#Choice" title="Choice">Choice</a> | <a href="#Link" title="Link">Link</a> )</div></code></div>
+         </p>
+      
+      <p>referenced by:
+         
+         <ul>
+            
+            <li><a href="#Grammar" title="Grammar">Grammar</a></li>
+            </ul>
+         </p><br><p style="font-size: 14px; font-weight:bold"><a name="NCName">NCName:</a></p><img border="0" src="diagram/NCName.png" height="37" width="405"><p>
+         
+         <div class="ebnf"><code>
+               
+               <div><a href="#NCName" title="NCName">NCName</a>&nbsp;&nbsp;&nbsp;::= [<a href="http://www.w3.org/TR/xml-names/#NT-NCName" title="http://www.w3.org/TR/xml-names/#NT-NCName" target="_blank">http://www.w3.org/TR/xml-names/#NT-NCName</a>]</div></code></div>
+         </p>
+      
+      <p>referenced by:
+         
+         <ul>
+            
+            <li><a href="#Primary" title="Primary">Primary</a></li>
+            
+            <li><a href="#Production" title="Production">Production</a></li>
+            
+            <li><a href="#URL" title="URL">URL</a></li>
+            </ul>
+         </p><br><p style="font-size: 14px; font-weight:bold"><a name="Choice">Choice:</a></p><img border="0" src="diagram/Choice.png" height="81" width="259" usemap="#Choice.map"><map name="Choice.map"><area shape="rect" coords="49,45,209,77" href="#SequenceOrDifference" title="SequenceOrDifference"></map><p>
+         
+         <div class="ebnf"><code>
+               
+               <div><a href="#Choice" title="Choice">Choice</a>&nbsp;&nbsp;&nbsp;::= <a href="#SequenceOrDifference" title="SequenceOrDifference">SequenceOrDifference</a> ( '|' <a href="#SequenceOrDifference" title="SequenceOrDifference">SequenceOrDifference</a> )*</div></code></div>
+         </p>
+      
+      <p>referenced by:
+         
+         <ul>
+            
+            <li><a href="#Primary" title="Primary">Primary</a></li>
+            
+            <li><a href="#Production" title="Production">Production</a></li>
+            </ul>
+         </p><br><p style="font-size: 14px; font-weight:bold"><a name="SequenceOrDifference">SequenceOrDifference:</a></p><img border="0" src="diagram/SequenceOrDifference.png" height="119" width="305" usemap="#SequenceOrDifference.map"><map name="SequenceOrDifference.map"><area shape="rect" coords="49,35,99,67" href="#Item" title="Item"><area shape="rect" coords="159,1,209,33" href="#Item" title="Item"><area shape="rect" coords="185,67,235,99" href="#Item" title="Item"></map><p>
+         
+         <div class="ebnf"><code>
+               
+               <div><a href="#SequenceOrDifference" title="SequenceOrDifference">SequenceOrDifference</a></div>
+               
+               <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;::= ( <a href="#Item" title="Item">Item</a> ( '-' <a href="#Item" title="Item">Item</a> | <a href="#Item" title="Item">Item</a>* ) )?</div></code></div>
+         </p>
+      
+      <p>referenced by:
+         
+         <ul>
+            
+            <li><a href="#Choice" title="Choice">Choice</a></li>
+            </ul>
+         </p><br><p style="font-size: 14px; font-weight:bold"><a name="Item">Item:</a></p><img border="0" src="diagram/Item.png" height="157" width="217" usemap="#Item.map"><map name="Item.map"><area shape="rect" coords="29,1,97,33" href="#Primary" title="Primary"></map><p>
+         
+         <div class="ebnf"><code>
+               
+               <div><a href="#Item" title="Item">Item</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;::= <a href="#Primary" title="Primary">Primary</a> ( '?' | '*' | '+' )?</div></code></div>
+         </p>
+      
+      <p>referenced by:
+         
+         <ul>
+            
+            <li><a href="#SequenceOrDifference" title="SequenceOrDifference">SequenceOrDifference</a></li>
+            </ul>
+         </p><br><p style="font-size: 14px; font-weight:bold"><a name="Primary">Primary:</a></p><img border="0" src="diagram/Primary.png" height="213" width="253" usemap="#Primary.map"><map name="Primary.map"><area shape="rect" coords="49,1,123,33" href="#NCName" title="NCName"><area shape="rect" coords="49,45,145,77" href="#StringLiteral" title="StringLiteral"><area shape="rect" coords="49,89,131,121" href="#CharCode" title="CharCode"><area shape="rect" coords="49,133,133,165" href="#CharClass" title="CharClass"><area shape="rect" coords="95,177,157,209" href="#Choice" title="Choice"></map><p>
+         
+         <div class="ebnf"><code>
+               
+               <div><a href="#Primary" title="Primary">Primary</a>&nbsp;&nbsp;::= <a href="#NCName" title="NCName">NCName</a></div>
+               
+               <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| <a href="#StringLiteral" title="StringLiteral">StringLiteral</a></div>
+               
+               <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| <a href="#CharCode" title="CharCode">CharCode</a></div>
+               
+               <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| <a href="#CharClass" title="CharClass">CharClass</a></div>
+               
+               <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| '(' <a href="#Choice" title="Choice">Choice</a> ')'</div></code></div>
+         </p>
+      
+      <p>referenced by:
+         
+         <ul>
+            
+            <li><a href="#Item" title="Item">Item</a></li>
+            </ul>
+         </p><br><p style="font-size: 14px; font-weight:bold"><a name="StringLiteral">StringLiteral:</a></p><img border="0" src="diagram/StringLiteral.png" height="151" width="327"><p>
+         
+         <div class="ebnf"><code>
+               
+               <div><a href="#StringLiteral" title="StringLiteral">StringLiteral</a></div>
+               
+               <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;::= '"' [^"]* '"'</div>
+               
+               <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| "'" [^']* "'"</div>
+               
+               <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/* ws: explicit */</div></code></div>
+         </p>
+      
+      <p>referenced by:
+         
+         <ul>
+            
+            <li><a href="#Primary" title="Primary">Primary</a></li>
+            </ul>
+         </p><br><p style="font-size: 14px; font-weight:bold"><a name="CharCode">CharCode:</a></p><img border="0" src="diagram/CharCode.png" height="141" width="259"><p>
+         
+         <div class="ebnf"><code>
+               
+               <div><a href="#CharCode" title="CharCode">CharCode</a>&nbsp;::= '#x' [0-9a-fA-F]+</div>
+               
+               <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/* ws: explicit */</div></code></div>
+         </p>
+      
+      <p>referenced by:
+         
+         <ul>
+            
+            <li><a href="#CharClass" title="CharClass">CharClass</a></li>
+            
+            <li><a href="#CharCodeRange" title="CharCodeRange">CharCodeRange</a></li>
+            
+            <li><a href="#Primary" title="Primary">Primary</a></li>
+            </ul>
+         </p><br><p style="font-size: 14px; font-weight:bold"><a name="CharClass">CharClass:</a></p><img border="0" src="diagram/CharClass.png" height="185" width="443" usemap="#CharClass.map"><map name="CharClass.map"><area shape="rect" coords="205,17,255,49" href="#Char" title="Char"><area shape="rect" coords="205,61,287,93" href="#CharCode" title="CharCode"><area shape="rect" coords="205,105,295,137" href="#CharRange" title="CharRange"><area shape="rect" coords="205,149,327,181" href="#CharCodeRange" title="CharCodeRange"></map><p>
+         
+         <div class="ebnf"><code>
+               
+               <div><a href="#CharClass" title="CharClass">CharClass</a></div>
+               
+               <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;::= '[' '^'? ( <a href="#Char" title="Char">Char</a> | <a href="#CharCode" title="CharCode">CharCode</a> | <a href="#CharRange" title="CharRange">CharRange</a> | <a href="#CharCodeRange" title="CharCodeRange">CharCodeRange</a> )+ ']'</div>
+               
+               <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/* ws: explicit */</div></code></div>
+         </p>
+      
+      <p>referenced by:
+         
+         <ul>
+            
+            <li><a href="#Primary" title="Primary">Primary</a></li>
+            </ul>
+         </p><br><p style="font-size: 14px; font-weight:bold"><a name="CharRange">CharRange:</a></p><img border="0" src="diagram/CharRange.png" height="37" width="259" usemap="#CharRange.map"><map name="CharRange.map"><area shape="rect" coords="29,1,79,33" href="#Char" title="Char"></map><p>
+         
+         <div class="ebnf"><code>
+               
+               <div><a href="#CharRange" title="CharRange">CharRange</a></div>
+               
+               <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;::= <a href="#Char" title="Char">Char</a> '-' ( <a href="#Char" title="Char">Char</a> - ']' )</div>
+               
+               <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/* ws: explicit */</div></code></div>
+         </p>
+      
+      <p>referenced by:
+         
+         <ul>
+            
+            <li><a href="#CharClass" title="CharClass">CharClass</a></li>
+            </ul>
+         </p><br><p style="font-size: 14px; font-weight:bold"><a name="CharCodeRange">CharCodeRange:</a></p><img border="0" src="diagram/CharCodeRange.png" height="37" width="289" usemap="#CharCodeRange.map"><map name="CharCodeRange.map"><area shape="rect" coords="29,1,111,33" href="#CharCode" title="CharCode"><area shape="rect" coords="177,1,259,33" href="#CharCode" title="CharCode"></map><p>
+         
+         <div class="ebnf"><code>
+               
+               <div><a href="#CharCodeRange" title="CharCodeRange">CharCodeRange</a></div>
+               
+               <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;::= <a href="#CharCode" title="CharCode">CharCode</a> '-' <a href="#CharCode" title="CharCode">CharCode</a></div>
+               
+               <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/* ws: explicit */</div></code></div>
+         </p>
+      
+      <p>referenced by:
+         
+         <ul>
+            
+            <li><a href="#CharClass" title="CharClass">CharClass</a></li>
+            </ul>
+         </p><br><p style="font-size: 14px; font-weight:bold"><a name="Link">Link:</a></p><img border="0" src="diagram/Link.png" height="37" width="195" usemap="#Link.map"><map name="Link.map"><area shape="rect" coords="75,1,119,33" href="#URL" title="URL"></map><p>
+         
+         <div class="ebnf"><code>
+               
+               <div><a href="#Link" title="Link">Link</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;::= '[' <a href="#URL" title="URL">URL</a> ']'</div></code></div>
+         </p>
+      
+      <p>referenced by:
+         
+         <ul>
+            
+            <li><a href="#Production" title="Production">Production</a></li>
+            </ul>
+         </p><br><p style="font-size: 14px; font-weight:bold"><a name="URL">URL:</a></p><img border="0" src="diagram/URL.png" height="85" width="643" usemap="#URL.map"><map name="URL.map"><area shape="rect" coords="519,49,593,81" href="#NCName" title="NCName"></map><p>
+         
+         <div class="ebnf"><code>
+               
+               <div><a href="#URL" title="URL">URL</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;::= [^:/?##x005D]+ '://' [^##x005D]+ ( '#' <a href="#NCName" title="NCName">NCName</a> )?</div>
+               
+               <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/* ws: explicit */</div></code></div>
+         </p>
+      
+      <p>referenced by:
+         
+         <ul>
+            
+            <li><a href="#Link" title="Link">Link</a></li>
+            </ul>
+         </p><br><p style="font-size: 14px; font-weight:bold"><a name="Whitespace">Whitespace:</a></p><img border="0" src="diagram/Whitespace.png" height="81" width="179" usemap="#Whitespace.map"><map name="Whitespace.map"><area shape="rect" coords="49,1,77,33" href="#S" title="S"><area shape="rect" coords="49,45,129,77" href="#Comment" title="Comment"></map><p>
+         
+         <div class="ebnf"><code>
+               
+               <div><a href="#Whitespace" title="Whitespace">Whitespace</a></div>
+               
+               <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;::= <a href="#S" title="S">S</a></div>
+               
+               <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| <a href="#Comment" title="Comment">Comment</a></div></code></div>
+         </p>
+      
+      <p>no references</p><br><p style="font-size: 14px; font-weight:bold"><a name="S">S:</a></p><img border="0" src="diagram/S.png" height="169" width="189"><p>
+         
+         <div class="ebnf"><code>
+               
+               <div><a href="#S" title="S">S</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;::= [#x0009#x000A#x000D#x0020]</div></code></div>
+         </p>
+      
+      <p>referenced by:
+         
+         <ul>
+            
+            <li><a href="#Whitespace" title="Whitespace">Whitespace</a></li>
+            </ul>
+         </p><br><hr>
+      
+      <p>
+         
+         <table border="0" class="signature">
+            
+            <tr>
+               
+               <td style="width: 100%">&nbsp;</td>
+               
+               <td valign="top">
+                  
+                  <nobr class="signature">... generated by <a name="Railroad-Diagram-Generator" class="signature" title="https://www.bottlecaps.de/rr/ui" href="https://www.bottlecaps.de/rr/ui" target="_blank">Railroad Diagram Generator</a></nobr>
+                  </td>
+               
+               <td><a name="Railroad-Diagram-Generator" title="https://www.bottlecaps.de/rr/ui" href="https://www.bottlecaps.de/rr/ui" target="_blank"><img border="0" src="diagram/rr-1.60.png" height="16" width="16"></a></td>
+               </tr>
+            </table>
+         </p>
+      </body>
+   </html>
