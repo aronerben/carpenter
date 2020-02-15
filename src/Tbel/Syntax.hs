@@ -11,5 +11,5 @@ data Program where
 
 -- Syntax-directed translation
 -- Attributes
-type Pos = Integer
+type Postion = Integer
 -- Instances for testing

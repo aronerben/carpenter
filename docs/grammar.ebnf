@@ -1,0 +1,34 @@
+Program  ::= Statements*
+
+Statement 
+         ::= TableAssignment | Comment
+
+TableAssignment
+         ::= 'table'? Identifier '=' TableExpression
+
+TableExpression
+         ::= Headers '|' (Row ',')* Row
+
+Row      ::= StringExpression | ArithmeticExpression
+
+StringExpression
+         ::= String | TODO
+
+ArithmeticExpression
+         ::= Number | TODO
+
+String   ::= '"' Text '"'
+
+Comment  ::= ( '--' Text | '-*' ( Text | '\n' )* '-*')
+
+Text     ::= Character*
+
+Identifier
+         ::= [a-zA-Z] [0-9a-zA-Z]*
+
+Character     
+         ::= [http://www.w3.org/TR/xml/#NT-Char]
+
+Number   ::= Digit+ (. Digit+)?
+
+Digit    ::= [0-9]
