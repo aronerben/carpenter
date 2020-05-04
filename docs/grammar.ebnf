@@ -9,6 +9,8 @@ TableAssignment
 TableExpression
          ::= Headers '|' (Row ',')* Row
 
+Headers  ::= Identifier*
+
 Row      ::= StringExpression | ArithmeticExpression
 
 StringExpression

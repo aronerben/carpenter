@@ -5,7 +5,7 @@ module Tbel.Lexer
   ( parens
   , braces
   , integer
-  , variable
+  , identifier
   , varKeyword
   , eqSymbol
   ) where
@@ -25,12 +25,11 @@ import Tbel.Base
 -- General parsers
 space :: Parser ()
 space =
-  Lex.space space1 (Lex.skipLineComment "//") (Lex.skipBlockComment "/*" "*/")
+  Lex.space space1 (Lex.skipLineComment "--") (Lex.skipBlockComment "-*" "*-")
 
 lexeme :: Parser a -> Parser a
 lexeme = Lex.lexeme space
 
---use this and between for parens parsing (check wiki)
 symbol :: Text -> Parser Text
 symbol = Lex.symbol space
 
@@ -38,7 +37,7 @@ fixedSymbol :: Text -> Parser ()
 fixedSymbol = void . symbol
 
 keyword :: Text -> Parser Text
-keyword kw = lexeme (string kw <* notFollowedBy alphaNumChar)
+keyword kw = lexeme $ string kw <* notFollowedBy alphaNumChar
 
 fixedKeyword :: Text -> Parser ()
 fixedKeyword = void . keyword
@@ -56,12 +55,12 @@ braces = betweenH "{" "}"
 integer :: Parser Integer
 integer = lexeme Lex.decimal
 
-variable :: Parser Var
-variable =
+identifier :: Parser Identifier
+identifier =
   lexeme $ do
     initialChar <- letterChar
     rest <- many alphaNumChar
-    pure $ Var $ initialChar : rest
+    pure $ Identifier $ initialChar : rest
 
 -- Grammar-specific keyword and symbol parsers
 -- TODO use template haskell to generate these off a list of keywords and symbols

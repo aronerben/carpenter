@@ -1,6 +1,7 @@
 module Tbel.Base
   ( Parser
-  , Var(..)
+  , Identifier(..)
+  , Headers(..)
   ) where
 
 import Data.Text (Text)
@@ -10,7 +11,10 @@ import Text.Megaparsec
 -- General aliases
 type Parser = Parsec Void Text
 
--- Needed so that Expr and Assignment have the same Var
-newtype Var =
-  Var String
-  deriving (Show)
+newtype Identifier =
+  Identifier String
+  deriving (Show, Eq)
+
+newtype Headers =
+  Headers [String]
+  deriving (Show, Eq)
