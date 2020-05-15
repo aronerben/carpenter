@@ -6,8 +6,10 @@ module Tbel.Lexer
   , braces
   , integer
   , identifier
-  , varKeyword
+  , tableKeyword
   , eqSymbol
+  , pipeSymbol
+  , commaSymbol
   ) where
 
 import Control.Monad (void)
@@ -55,6 +57,9 @@ braces = betweenH "{" "}"
 integer :: Parser Integer
 integer = lexeme Lex.decimal
 
+sinteger :: Parser Integer
+sinteger = Lex.signed space integer
+
 identifier :: Parser Identifier
 identifier =
   lexeme $ do
@@ -65,8 +70,14 @@ identifier =
 -- Grammar-specific keyword and symbol parsers
 -- TODO use template haskell to generate these off a list of keywords and symbols
 -- genKeyword name = return $ FunD (mkName $ name ++ "Keyword") [Clause [] (NormalB ) []]
-varKeyword :: Parser ()
-varKeyword = fixedKeyword "var"
+tableKeyword :: Parser ()
+tableKeyword = fixedKeyword "table"
 
 eqSymbol :: Parser ()
 eqSymbol = fixedSymbol "="
+
+pipeSymbol :: Parser ()
+pipeSymbol = fixedSymbol "|"
+
+commaSymbol :: Parser ()
+commaSymbol = fixedSymbol ","

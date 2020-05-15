@@ -11,6 +11,7 @@ data Program where
 
 data Statement where
   Statement :: TableAssignment -> Statement
+  -- TODO Add more Statements
   deriving (Show, Eq)
 
 data TableAssignment where
@@ -18,7 +19,7 @@ data TableAssignment where
   deriving (Show, Eq)
 
 data TableExpression where
-  TableExpression :: Headers -> Row -> TableExpression
+  TableExpression :: [Header] -> [Row] -> TableExpression
   deriving (Show, Eq)
 
 data Row where

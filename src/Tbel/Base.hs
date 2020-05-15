@@ -1,7 +1,7 @@
 module Tbel.Base
   ( Parser
+  , Header
   , Identifier(..)
-  , Headers(..)
   ) where
 
 import Data.Text (Text)
@@ -15,6 +15,4 @@ newtype Identifier =
   Identifier String
   deriving (Show, Eq)
 
-newtype Headers =
-  Headers [String]
-  deriving (Show, Eq)
+type Header = Identifier

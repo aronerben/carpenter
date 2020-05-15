@@ -13,12 +13,31 @@ import Tbel.Syntax
 
 -- Parsers 
 -- Grammar-specific elaborate parsers
-tblassign :: Parser TableAssignment
--- TODO continue here
-tblassign = tblassign
+row :: Parser Row
+row = row
+
+header :: Parser Header
+header = do
+  header <- identifier
+  pure header
+
+tableExpression :: Parser TableExpression
+tableExpression = do
+  headers <- many header
+  pipeSymbol
+  rows <- sepBy1 row commaSymbol
+  pure $ TableExpression headers rows
+
+tableAssignment :: Parser TableAssignment
+tableAssignment = do
+  tableKeyword
+  ident <- identifier
+  eqSymbol
+  tableExpr <- tableExpression
+  pure $ TableAssignment ident tableExpr
 
 statement :: Parser Statement
-statement = Statement <$> tblassign
+statement = Statement <$> tableAssignment
 
 program :: Parser Program
 program = do
