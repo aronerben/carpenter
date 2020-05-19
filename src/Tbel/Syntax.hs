@@ -23,8 +23,12 @@ data TableExpression where
   deriving (Show, Eq)
 
 data Row where
-  SRow :: StringExpression -> Row
-  ARow :: ArithmeticExpression -> Row
+  Row :: [Expression] -> Row
+  deriving (Show, Eq)
+
+data Expression where
+  SExpr :: StringExpression -> Expression
+  AExpr :: ArithmeticExpression -> Expression
   deriving (Show, Eq)
 
 data StringExpression where
@@ -33,8 +37,8 @@ data StringExpression where
   deriving (Show, Eq)
 
 data ArithmeticExpression where
-  ArithmeticExpression :: Double -> ArithmeticExpression
-  -- TODO make this a generic Num (implement Show and Eq instance)
+  ArithmeticExpression :: Integer -> ArithmeticExpression
+  -- TODO make this a generic Num, add Double support (implement Show and Eq instance)
   -- TODO add more value constructors (addition, sub, mul, etc.)
   deriving (Show, Eq)
 

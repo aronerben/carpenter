@@ -4,7 +4,7 @@
 module Tbel.Lexer
   ( parens
   , braces
-  , integer
+  , sinteger
   , identifier
   , tableKeyword
   , eqSymbol

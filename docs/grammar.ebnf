@@ -11,7 +11,7 @@ TableExpression
 
 Headers  ::= Identifier*
 
-Row      ::= StringExpression | ArithmeticExpression
+Row      ::= (StringExpression | ArithmeticExpression)*
 
 StringExpression
          ::= String | TODO

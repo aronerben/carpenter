@@ -6,6 +6,7 @@ module Tbel.Parser where
 import Data.Text (Text)
 import Data.Void
 import Text.Megaparsec
+import Text.Megaparsec.Char (alphaNumChar)
 
 import Tbel.Base
 import Tbel.Lexer
@@ -13,8 +14,25 @@ import Tbel.Syntax
 
 -- Parsers 
 -- Grammar-specific elaborate parsers
+arithmeticExpression :: Parser Expression
+arithmeticExpression = do
+  expr <- sinteger
+  pure $ AExpr $ ArithmeticExpression expr
+
+stringExpression :: Parser Expression
+stringExpression = do
+  expr <- many alphaNumChar
+  pure $ SExpr $ StringExpression expr
+
+expression :: Parser Expression
+expression = do
+  expr <- stringExpression <|> arithmeticExpression
+  pure expr
+
 row :: Parser Row
-row = row
+row = do
+  exprs <- many expression
+  pure $ Row exprs
 
 header :: Parser Header
 header = do
