@@ -1,0 +1,3 @@
+table people = name age | "mike" 25, "dave" 17
+
+table money = name amount | "mike" -10.2, "dave" +12

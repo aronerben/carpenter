@@ -16,12 +16,14 @@ import Tbel.Syntax
 -- Grammar-specific elaborate parsers
 arithmeticExpression :: Parser Expression
 arithmeticExpression = do
-  expr <- sinteger
+  expr <- (try $ fmap NFloat sfloat) <|> (fmap NInt sinteger)
   pure $ AExpr $ ArithmeticExpression expr
 
 stringExpression :: Parser Expression
 stringExpression = do
+  quoteSymbol
   expr <- many alphaNumChar
+  quoteSymbol
   pure $ SExpr $ StringExpression expr
 
 expression :: Parser Expression
@@ -31,7 +33,7 @@ expression = do
 
 row :: Parser Row
 row = do
-  exprs <- many expression
+  exprs <- some expression
   pure $ Row exprs
 
 header :: Parser Header
@@ -41,7 +43,7 @@ header = do
 
 tableExpression :: Parser TableExpression
 tableExpression = do
-  headers <- many header
+  headers <- some header
   pipeSymbol
   rows <- sepBy1 row commaSymbol
   pure $ TableExpression headers rows
@@ -75,6 +77,12 @@ execParserWithError = execParser errorBundlePretty
 
 execParserTest :: Parser a -> Text -> Either () a
 execParserTest = execParser $ const ()
+
+execParserManual :: Show a => Parser a -> Text -> IO ()
+execParserManual p txt =
+  case execParser errorBundlePretty p txt of
+    Left err -> putStr err
+    Right ast -> print ast
 
 parser :: Text -> Either String Program
 parser = execParserWithError program

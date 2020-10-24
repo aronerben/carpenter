@@ -21,7 +21,7 @@ ArithmeticExpression
 
 String   ::= '"' Text '"'
 
-Comment  ::= ( '--' Text | '-*' ( Text | '\n' )* '-*')
+Comment  ::= ( '--' Text | '-*' ( Text | '\n' )* '*-')
 
 Text     ::= Character*
 

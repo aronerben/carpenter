@@ -5,11 +5,14 @@ module Tbel.Lexer
   ( parens
   , braces
   , sinteger
+  , integer
+  , sfloat
   , identifier
   , tableKeyword
   , eqSymbol
   , pipeSymbol
   , commaSymbol
+  , quoteSymbol
   ) where
 
 import Control.Monad (void)
@@ -60,6 +63,9 @@ integer = lexeme Lex.decimal
 sinteger :: Parser Integer
 sinteger = Lex.signed space integer
 
+sfloat :: Parser Double
+sfloat = Lex.signed space Lex.float
+
 identifier :: Parser Identifier
 identifier =
   lexeme $ do
@@ -81,3 +87,6 @@ pipeSymbol = fixedSymbol "|"
 
 commaSymbol :: Parser ()
 commaSymbol = fixedSymbol ","
+
+quoteSymbol :: Parser ()
+quoteSymbol = fixedSymbol "\""

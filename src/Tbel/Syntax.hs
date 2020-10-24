@@ -37,9 +37,13 @@ data StringExpression where
   deriving (Show, Eq)
 
 data ArithmeticExpression where
-  ArithmeticExpression :: Integer -> ArithmeticExpression
-  -- TODO make this a generic Num, add Double support (implement Show and Eq instance)
+  ArithmeticExpression :: Number -> ArithmeticExpression
   -- TODO add more value constructors (addition, sub, mul, etc.)
+  deriving (Show, Eq)
+
+data Number where
+  NInt :: Integer -> Number
+  NFloat :: Double -> Number
   deriving (Show, Eq)
 
 -- Syntax-directed translation

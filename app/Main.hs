@@ -5,7 +5,11 @@ module Main
 import Data.Text (Text)
 import Data.Text.IO as T (readFile)
 
-import Tbel.Parser
+import Tbel.Parser (parser)
 
 main :: IO ()
-main = putStrLn "hey"
+main = do
+  file <- T.readFile "ex1.txt"
+  case parser file of
+    Left err -> putStr err
+    Right ast -> print ast
