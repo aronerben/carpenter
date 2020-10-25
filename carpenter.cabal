@@ -4,14 +4,14 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 
-name:           tbel
+name:           carpenter
 version:        0.1.0.0
-description:    Please see the README on GitHub at <https://github.com/aronerben/tbel/blob/master/README.md>
-homepage:       https://github.com/githubuser/tbel#readme
-bug-reports:    https://github.com/githubuser/tbel/issues
-author:         Author name here
-maintainer:     example@example.com
-copyright:      2019 Author name here
+description:    Please see the README on GitHub at <https://github.com/aronerben/carpenter/blob/master/README.md>
+homepage:       https://github.com/aronerben/carpenter#readme
+bug-reports:    https://github.com/aronerben/carpenter/issues
+author:         Aron Erben
+maintainer:     aron.erben@gmail.com
+copyright:      2020 Aron Erben 
 license:        BSD3
 license-file:   LICENSE
 build-type:     Simple
@@ -21,17 +21,17 @@ extra-source-files:
 
 source-repository head
   type: git
-  location: https://github.com/githubuser/tbel
+  location: https://github.com/aronerben/carpenter
 
 library
   exposed-modules:
-      Tbel.Base
-      Tbel.Evaluator
-      Tbel.Lexer
-      Tbel.Parser
-      Tbel.Syntax
+      Carpenter.Base
+      Carpenter.Evaluator
+      Carpenter.Lexer
+      Carpenter.Parser
+      Carpenter.Syntax
   other-modules:
-      Paths_tbel
+      Paths_carpenter
   hs-source-dirs:
       src
   build-depends:
@@ -46,43 +46,43 @@ library
     , text
   default-language: Haskell2010
 
-executable tbel-exe
+executable carpenter-exe
   main-is: Main.hs
   other-modules:
-      Paths_tbel
+      Paths_carpenter
   hs-source-dirs:
       app
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       HUnit
     , base >=4.7 && <5
+    , carpenter
     , containers
     , megaparsec
     , mtl
     , parser-combinators
     , tasty
     , tasty-hunit
-    , tbel
     , text
   default-language: Haskell2010
 
-test-suite tbel-test
+test-suite carpenter-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
-      Paths_tbel
+      Paths_carpenter
   hs-source-dirs:
       test
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       HUnit
     , base >=4.7 && <5
+    , carpenter
     , containers
     , megaparsec
     , mtl
     , parser-combinators
     , tasty
     , tasty-hunit
-    , tbel
     , text
   default-language: Haskell2010

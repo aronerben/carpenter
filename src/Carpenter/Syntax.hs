@@ -1,9 +1,9 @@
 {-# LANGUAGE GADTs #-}
 
-module Tbel.Syntax where
+module Carpenter.Syntax where
 
+import Carpenter.Base
 import Data.Text (Text)
-import Tbel.Base
 
 -- Syntax as GADTs
 data Program where

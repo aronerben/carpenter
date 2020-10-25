@@ -1,4 +1,4 @@
-module Tbel.Base
+module Carpenter.Base
   ( Parser
   , Header
   , Identifier(..)

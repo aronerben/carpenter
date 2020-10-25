@@ -1,7 +1,7 @@
 --{-# LANGUAGE TemplateHaskell #-}
 {-# LANGUAGE OverloadedStrings #-}
 
-module Tbel.Lexer
+module Carpenter.Lexer
   ( mspace
   , parens
   , braces
@@ -36,16 +36,16 @@ import Text.Megaparsec.Char.Lexer
   , symbol
   )
 
-import Tbel.Base
+import Carpenter.Base
 
 -- General parsers
 -- TODO THINK ABOUT HOW AND WHEN SPACING HAPPENS AND WHERE COMMENT IS ALLOWED
+-- TODO RENAME CARPENTER
 mspace :: Parser ()
 mspace = space hspace1 (skipLineComment "--") (skipBlockComment "-*" "*-")
 
-spacer :: Parser ()
-spacer = space space1 adwad
-
+--spacer :: Parser ()
+--spacer = space space1 adwad
 mlexeme :: Parser a -> Parser a
 mlexeme = lexeme mspace
 

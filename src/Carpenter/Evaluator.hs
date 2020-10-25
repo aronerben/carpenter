@@ -1,14 +1,14 @@
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE GADTs #-}
 
-module Tbel.Evaluator where
+module Carpenter.Evaluator where
 
+import Carpenter.Base
+import Carpenter.Parser
+import Carpenter.Syntax
 import Control.Monad.State
 import Data.Map as M (Map, insert, lookup)
 import Data.Text (Text)
-import Tbel.Base
-import Tbel.Parser
-import Tbel.Syntax
 
 type AST = Program
 

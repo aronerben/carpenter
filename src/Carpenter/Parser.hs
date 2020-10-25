@@ -1,7 +1,7 @@
 {-# LANGUAGE OverloadedStrings #-}
 
 -- TODO split this up in Internal, so public interface is only parser, but rest can be tested
-module Tbel.Parser where
+module Carpenter.Parser where
 
 import Data.Char (isPrint)
 import Data.Text (Text)
@@ -9,9 +9,9 @@ import Data.Void
 import Text.Megaparsec
 import Text.Megaparsec.Char (asciiChar, newline)
 
-import Tbel.Base
-import Tbel.Lexer
-import Tbel.Syntax
+import Carpenter.Base
+import Carpenter.Lexer
+import Carpenter.Syntax
 
 -- Parsers 
 -- Grammar-specific elaborate parsers

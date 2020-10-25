@@ -1,3 +1,2 @@
-# tbel
-**T**able-**b**ased **e**valuation **l**anguage  
-Declarative language to manipulate and query tables
+# Carpenter
+Declarative programming language to manipulate and query tables in various formats

@@ -5,7 +5,7 @@ module Main
 import Data.Text (Text)
 import Data.Text.IO as T (readFile)
 
-import Tbel.Parser (parser)
+import Carpenter.Parser (parser)
 
 main :: IO ()
 main = do
