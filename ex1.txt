@@ -1,3 +1,12 @@
-table people = name age | "mike" 25, "dave" 17
+-- Comment
+table people = name age | "mike _ heheü" 25, "dave" 17
 
-table money = name amount | "mike" -10.2, "dave" +12
+-- Money
+-* Multi
+line
+Comment *-
+
+expr mike_money = -200 + 300
+
+table money = name amount | "mike" mike_money, "dave" +12
+

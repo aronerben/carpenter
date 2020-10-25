@@ -2,6 +2,7 @@
 
 module Tbel.Syntax where
 
+import Data.Text (Text)
 import Tbel.Base
 
 -- Syntax as GADTs
@@ -10,8 +11,13 @@ data Program where
   deriving (Show, Eq)
 
 data Statement where
-  Statement :: TableAssignment -> Statement
+  TStatement :: TableAssignment -> Statement
+  EStatement :: ExpressionAssignment -> Statement
   -- TODO Add more Statements
+  deriving (Show, Eq)
+
+data ExpressionAssignment where
+  ExpressionAssignment :: Identifier -> Expression -> ExpressionAssignment
   deriving (Show, Eq)
 
 data TableAssignment where
@@ -32,7 +38,7 @@ data Expression where
   deriving (Show, Eq)
 
 data StringExpression where
-  StringExpression :: String -> StringExpression
+  StringExpression :: Text -> StringExpression
   -- TODO add more value constructors (concat, substring, uppercase, etc.)
   deriving (Show, Eq)
 

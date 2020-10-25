@@ -2,13 +2,15 @@
 {-# LANGUAGE OverloadedStrings #-}
 
 module Tbel.Lexer
-  ( parens
+  ( mspace
+  , parens
   , braces
   , sinteger
   , integer
   , sfloat
   , identifier
   , tableKeyword
+  , exprKeyword
   , eqSymbol
   , pipeSymbol
   , commaSymbol
@@ -22,27 +24,39 @@ import Data.Text (Text)
 
 --import Language.Haskell.TH
 import Text.Megaparsec
-import Text.Megaparsec.Char (alphaNumChar, letterChar, space1, string)
-import qualified Text.Megaparsec.Char.Lexer as Lex
+import Text.Megaparsec.Char (alphaNumChar, char, hspace1, letterChar, string)
+import Text.Megaparsec.Char.Lexer
+  ( decimal
+  , float
+  , lexeme
+  , signed
+  , skipBlockComment
+  , skipLineComment
+  , space
+  , symbol
+  )
 
 import Tbel.Base
 
 -- General parsers
-space :: Parser ()
-space =
-  Lex.space space1 (Lex.skipLineComment "--") (Lex.skipBlockComment "-*" "*-")
+-- TODO THINK ABOUT HOW AND WHEN SPACING HAPPENS AND WHERE COMMENT IS ALLOWED
+mspace :: Parser ()
+mspace = space hspace1 (skipLineComment "--") (skipBlockComment "-*" "*-")
 
-lexeme :: Parser a -> Parser a
-lexeme = Lex.lexeme space
+spacer :: Parser ()
+spacer = space space1 adwad
 
-symbol :: Text -> Parser Text
-symbol = Lex.symbol space
+mlexeme :: Parser a -> Parser a
+mlexeme = lexeme mspace
+
+msymbol :: Text -> Parser Text
+msymbol = symbol mspace
 
 fixedSymbol :: Text -> Parser ()
-fixedSymbol = void . symbol
+fixedSymbol = void . msymbol
 
 keyword :: Text -> Parser Text
-keyword kw = lexeme $ string kw <* notFollowedBy alphaNumChar
+keyword kw = mlexeme $ string kw <* notFollowedBy alphaNumChar
 
 fixedKeyword :: Text -> Parser ()
 fixedKeyword = void . keyword
@@ -58,19 +72,19 @@ braces :: Parser a -> Parser a
 braces = betweenH "{" "}"
 
 integer :: Parser Integer
-integer = lexeme Lex.decimal
+integer = mlexeme decimal
 
 sinteger :: Parser Integer
-sinteger = Lex.signed space integer
+sinteger = signed mspace integer
 
 sfloat :: Parser Double
-sfloat = Lex.signed space Lex.float
+sfloat = signed mspace float
 
 identifier :: Parser Identifier
 identifier =
-  lexeme $ do
+  mlexeme $ do
     initialChar <- letterChar
-    rest <- many alphaNumChar
+    rest <- many (alphaNumChar <|> char '_')
     pure $ Identifier $ initialChar : rest
 
 -- Grammar-specific keyword and symbol parsers
@@ -78,6 +92,9 @@ identifier =
 -- genKeyword name = return $ FunD (mkName $ name ++ "Keyword") [Clause [] (NormalB ) []]
 tableKeyword :: Parser ()
 tableKeyword = fixedKeyword "table"
+
+exprKeyword :: Parser ()
+exprKeyword = fixedKeyword "expr"
 
 eqSymbol :: Parser ()
 eqSymbol = fixedSymbol "="
