@@ -1,0 +1,16 @@
+-- Comment
+table people = name age | "mike _ heheü" 25, "dave" 17;
+
+-- Money
+-* Multi
+line
+Comment *-
+
+
+    expr mike_debt = -200;
+
+expr mike_money = mike_debt + 300;
+
+table money = name amount | "mike" mike_money, "dave" +12;
+
+

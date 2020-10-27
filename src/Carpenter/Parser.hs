@@ -68,7 +68,8 @@ exprAssigment = do
 
 statement :: Parser Statement
 statement =
-  (TStatement <$> tableAssignment <|> EStatement <$> exprAssigment) <* newline
+  (TStatement <$> tableAssignment <|> EStatement <$> exprAssigment) <*
+  semicolonSymbol
 
 program :: Parser Program
 program =

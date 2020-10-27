@@ -15,6 +15,7 @@ module Carpenter.Lexer
   , pipeSymbol
   , commaSymbol
   , quoteSymbol
+  , semicolonSymbol
   ) where
 
 import Control.Monad (void)
@@ -24,7 +25,7 @@ import Data.Text (Text)
 
 --import Language.Haskell.TH
 import Text.Megaparsec
-import Text.Megaparsec.Char (alphaNumChar, char, hspace1, letterChar, string)
+import Text.Megaparsec.Char (alphaNumChar, char, letterChar, space1, string)
 import Text.Megaparsec.Char.Lexer
   ( decimal
   , float
@@ -39,10 +40,8 @@ import Text.Megaparsec.Char.Lexer
 import Carpenter.Base
 
 -- General parsers
--- TODO THINK ABOUT HOW AND WHEN SPACING HAPPENS AND WHERE COMMENT IS ALLOWED
--- TODO RENAME CARPENTER
 mspace :: Parser ()
-mspace = space hspace1 (skipLineComment "--") (skipBlockComment "-*" "*-")
+mspace = space space1 (skipLineComment "--") (skipBlockComment "-*" "*-")
 
 --spacer :: Parser ()
 --spacer = space space1 adwad
@@ -107,3 +106,6 @@ commaSymbol = fixedSymbol ","
 
 quoteSymbol :: Parser ()
 quoteSymbol = fixedSymbol "\""
+
+semicolonSymbol :: Parser ()
+semicolonSymbol = fixedSymbol ";"

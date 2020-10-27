@@ -9,7 +9,7 @@ import Carpenter.Parser (parser)
 
 main :: IO ()
 main = do
-  file <- T.readFile "ex1.txt"
+  file <- T.readFile "examples/ex1.txt"
   case parser file of
     Left err -> putStr err
     Right ast -> print ast

@@ -6,6 +6,9 @@ Statement
 TableAssignment
          ::= 'table' Identifier '=' TableExpression
 
+ExpressionAssignment
+         ::= 'expr' Identifier '=' (StringExpression | ArithmeticExpression)
+
 TableExpression
          ::= Headers '|' (Row ',')* Row
 
