@@ -29,6 +29,7 @@ dependencies:
 - tasty-hunit
 - mtl
 - containers
+- template-haskell
 
 library:
   source-dirs: src

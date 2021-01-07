@@ -55,4 +55,5 @@ data Number where
 -- Syntax-directed translation
 -- Attributes
 type Postion = Integer
+
 -- Instances for testing

@@ -43,6 +43,7 @@ library
     , parser-combinators
     , tasty
     , tasty-hunit
+    , template-haskell
     , text
   default-language: Haskell2010
 
@@ -63,6 +64,7 @@ executable carpenter-exe
     , parser-combinators
     , tasty
     , tasty-hunit
+    , template-haskell
     , text
   default-language: Haskell2010
 
@@ -84,5 +86,6 @@ test-suite carpenter-test
     , parser-combinators
     , tasty
     , tasty-hunit
+    , template-haskell
     , text
   default-language: Haskell2010

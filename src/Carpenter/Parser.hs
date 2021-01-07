@@ -3,21 +3,20 @@
 -- TODO split this up in Internal, so public interface is only parser, but rest can be tested
 module Carpenter.Parser where
 
+import Carpenter.Base
+import Carpenter.Lexer
+import Carpenter.Syntax
 import Data.Char (isPrint)
 import Data.Text (Text)
 import Data.Void
 import Text.Megaparsec
 import Text.Megaparsec.Char (asciiChar, newline)
 
-import Carpenter.Base
-import Carpenter.Lexer
-import Carpenter.Syntax
-
--- Parsers 
+-- Parsers
 -- Grammar-specific elaborate parsers
 arithmeticExpression :: Parser Expression
 arithmeticExpression = do
-  expr <- (try $ NFloat <$> sfloat) <|> (NInt <$> sinteger)
+  expr <- try (NFloat <$> sfloat) <|> (NInt <$> sinteger)
   pure $ AExpr $ ArithmeticExpression expr
 
 stringExpression :: Parser Expression
@@ -30,8 +29,7 @@ stringExpression = do
 
 expression :: Parser Expression
 expression = do
-  expr <- stringExpression <|> arithmeticExpression
-  pure expr
+  stringExpression <|> arithmeticExpression
 
 row :: Parser Row
 row = do
@@ -40,8 +38,7 @@ row = do
 
 header :: Parser Header
 header = do
-  header <- identifier
-  pure header
+  identifier
 
 tableExpression :: Parser TableExpression
 tableExpression = do
@@ -55,32 +52,31 @@ tableAssignment = do
   tableKeyword
   ident <- identifier
   eqSymbol
-  tableExpr <- tableExpression
-  pure $ TableAssignment ident tableExpr
+  TableAssignment ident <$> tableExpression
 
 exprAssigment :: Parser ExpressionAssignment
 exprAssigment = do
   exprKeyword
   ident <- identifier
   eqSymbol
-  expr <- expression
-  pure $ ExpressionAssignment ident expr
+  ExpressionAssignment ident <$> expression
 
 statement :: Parser Statement
 statement =
-  (TStatement <$> tableAssignment <|> EStatement <$> exprAssigment) <*
-  semicolonSymbol
+  (TStatement <$> tableAssignment <|> EStatement <$> exprAssigment)
+    <* semicolonSymbol
 
 program :: Parser Program
 program =
-  do mspace -- Ignore possible spaces/comments in the beginning
-     stmts <- many statement
-     pure $ Program stmts
-     <* eof -- Parse til eof
+  do
+    mspace -- Ignore possible spaces/comments in the beginning
+    stmts <- many statement
+    pure $ Program stmts
+    <* eof -- Parse til eof
 
 -- Parser starters
 execParser ::
-     (ParseErrorBundle Text Void -> b) -> Parser a -> Text -> Either b a
+  (ParseErrorBundle Text Void -> b) -> Parser a -> Text -> Either b a
 execParser errFn p text =
   case parse p "" text of
     Right parsed -> Right parsed
