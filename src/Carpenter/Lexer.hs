@@ -1,4 +1,4 @@
---{-# LANGUAGE TemplateHaskell #-}
+{-# LANGUAGE TemplateHaskell #-}
 {-# LANGUAGE OverloadedStrings #-}
 
 module Carpenter.Lexer
@@ -23,7 +23,7 @@ import Control.Monad.Combinators (some)
 import Control.Monad.Combinators.Expr
 import Data.Text (Text)
 
---import Language.Haskell.TH
+import Language.Haskell.TH
 import Text.Megaparsec
 import Text.Megaparsec.Char (alphaNumChar, char, letterChar, space1, string)
 import Text.Megaparsec.Char.Lexer
@@ -42,6 +42,7 @@ import Carpenter.Base
 -- General parsers
 mspace :: Parser ()
 mspace = space space1 (skipLineComment "--") (skipBlockComment "-*" "*-")
+
 
 --spacer :: Parser ()
 --spacer = space space1 adwad
@@ -87,8 +88,6 @@ identifier =
     pure $ Identifier $ initialChar : rest
 
 -- Grammar-specific keyword and symbol parsers
--- TODO use template haskell to generate these off a list of keywords and symbols
--- genKeyword name = return $ FunD (mkName $ name ++ "Keyword") [Clause [] (NormalB ) []]
 tableKeyword :: Parser ()
 tableKeyword = fixedKeyword "table"
 
@@ -109,3 +108,12 @@ quoteSymbol = fixedSymbol "\""
 
 semicolonSymbol :: Parser ()
 semicolonSymbol = fixedSymbol ";"
+
+
+-- TODO use template haskell to generate these off a list of keywords and symbols
+-- put this into different module
+-- mkFunc :: Q [Dec]
+-- mkFunc = return [ValD (VarP str') (NormalB (LitE (StringL ";"))) []]
+--     where str' = mkName "semicolonSymbol2"
+
+-- $(mkFunc)
