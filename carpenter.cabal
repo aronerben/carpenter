@@ -1,6 +1,6 @@
 cabal-version: 1.12
 
--- This file has been generated from package.yaml by hpack version 0.34.2.
+-- This file has been generated from package.yaml by hpack version 0.34.4.
 --
 -- see: https://github.com/sol/hpack
 
@@ -11,7 +11,7 @@ homepage:       https://github.com/aronerben/carpenter#readme
 bug-reports:    https://github.com/aronerben/carpenter/issues
 author:         Aron Erben
 maintainer:     aron.erben@gmail.com
-copyright:      2020 Aron Erben 
+copyright:      2020 Aron Erben
 license:        BSD3
 license-file:   LICENSE
 build-type:     Simple
@@ -64,9 +64,6 @@ executable carpenter-exe
     , tasty-hunit
     , template-haskell
     , text
-  if false
-    other-modules:
-        Paths_carpenter
   default-language: Haskell2010
 
 test-suite carpenter-test
@@ -87,7 +84,4 @@ test-suite carpenter-test
     , tasty-hunit
     , template-haskell
     , text
-  if false
-    other-modules:
-        Paths_carpenter
   default-language: Haskell2010

@@ -1,0 +1,10 @@
+cradle:
+  stack:
+    - path: "./src"
+      component: "carpenter:lib"
+
+    - path: "./app/Main.hs"
+      component: "carpenter:exe:carpenter-exe"
+
+    - path: "./test"
+      component: "carpenter:test:carpenter-test"

@@ -4,7 +4,7 @@ github: "aronerben/carpenter"
 license: BSD3
 author: "Aron Erben"
 maintainer: "aron.erben@gmail.com"
-copyright: "2020 Aron Erben "
+copyright: "2020 Aron Erben"
 
 extra-source-files:
   - README.md

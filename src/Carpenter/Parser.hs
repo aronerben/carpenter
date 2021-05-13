@@ -28,17 +28,13 @@ stringExpression = do
   pure $ SExpr $ StringExpression expr
 
 expression :: Parser Expression
-expression = do
-  stringExpression <|> arithmeticExpression
+expression = stringExpression <|> arithmeticExpression
 
 row :: Parser Row
-row = do
-  exprs <- some expression
-  pure $ Row exprs
+row = Row <$> some expression
 
 header :: Parser Header
-header = do
-  identifier
+header = identifier
 
 tableExpression :: Parser TableExpression
 tableExpression = do
